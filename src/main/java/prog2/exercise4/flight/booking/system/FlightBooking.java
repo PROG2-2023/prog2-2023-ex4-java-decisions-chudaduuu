@@ -16,28 +16,9 @@ public class FlightBooking {
     private double totalTicketPrice=departureTicketPrice+ returnTicketPrice;
     //private String ticketNumber;
     private String sourceAirport;
-    /*private String First;
-    private String Business;
-    private String Economy;*/
     private bookingClass BookingClass;
     private TripType tripType;
     private double DepartingTicketPrice;
-
-
-   /*  public void setFirst(String First) {
-        this.First = First;
-
-    }
-
-    public void setBusiness(String Business) {
-        this.Business = Business;
-
-    }
-
-    public void setEconomy(String Economy) {
-        this.Economy = Economy;
-
-    }*/
 
     public void setDepartingTicketPrice(int child,int adult) {
         this.departureTicketPrice = DepartingTicketPrice;
@@ -61,18 +42,6 @@ public class FlightBooking {
         this.passengerFullName = PassengerFullName;
     }
 
- /*    public void setDepartureDate(LocalDate DepartingDate)
-    {
-        String sdepart ="2023-03-04";
-        this.DepartureDate = LocalDate.parse(sdepart);
-    }
-
-    public void setReturnDate(LocalDate ReturnDate)
-    {
-        String sreturn ="2023-03-05";
-        this.returnDate = LocalDate.parse(sreturn);
-    }
-*/
     public void setTotalPassengers(int childPassengers, int adultPassengers)
     {
 
@@ -135,87 +104,38 @@ public class FlightBooking {
         return flightCompany;
     }
 
-    
-public LocalDate departureDate;
-
-
-public LocalDate ReturnDate;
-
-
-public void setDepartureDate(LocalDate departureDate){
-
-
-  String sdepart ="2023-03-04";
-
-
-  this.departureDate=LocalDate.parse(sdepart);
-
-
-}
-
-
-public LocalDate getDepartureDate(){
-
-
-  return departureDate;
-
-
-}
-
-
-
-public void setReturnDate(LocalDate returnDate){
-
-
-  String sreturn="2023-03-05";
-
-
-  this.ReturnDate=departureDate.plusDays(2);
-
-
-  //Period period=Period.between(returnDate,departureDate);
-
-
-  long i = departureDate.toEpochDay() - returnDate.toEpochDay();
-
-
-  if(i>=0 && i<1){
-
-
-    LocalDate ReturnDate2=departureDate.plusDays(2);
-
-
-  }else if(i>=1 && i<2){
-
-
-    LocalDate ReturnDate2=departureDate.plusDays(1);
-
-
-  }
-
-
-}
-
-
-public LocalDate getReturnDate(){
-
-
-  return ReturnDate;
-
-
-}
-
-    /*public LocalDate getDepartureDate()
+    public LocalDate getDepartureDate()
     {
 
-        return DepartureDate;
+        return departureDate;
+    }
+
+
+    public LocalDate departureDate;
+    public LocalDate ReturnDate;
+    public void setDepartureDate(LocalDate departureDate){
+        String sdepart ="2023-03-04";
+        this.departureDate=LocalDate.parse(sdepart);
+    }
+
+
+    public void setReturnDate(LocalDate returnDate){
+    String sreturn="2023-03-05";
+    this.ReturnDate=departureDate.plusDays(2);
+    long i = departureDate.toEpochDay() - returnDate.toEpochDay();
+    if(i>=0 && i<1){
+        LocalDate ReturnDate2=departureDate.plusDays(2);
+        }
+    else if(i>=1 && i<2){
+        LocalDate ReturnDate2=departureDate.plusDays(1);
+        }
     }
 
     public LocalDate getReturnDate()
     {
 
-        return returnDate;
-    }*/
+        return ReturnDate;
+    }
 
     public int getTotalPassengers()
     {
@@ -244,26 +164,6 @@ public LocalDate getReturnDate(){
     public String getSourceAirport() {
         return sourceAirport;
     }
-
- /*  public TripDestination getDestinationAirport() {
-        return tripDestination;
-    }
-
-    public TripDestination getTripDestination() {
-        return tripDestination;
-    }
-
-    public String getfirst() {
-        return First;
-    }
-
-    public String getBusiness() {
-        return Business;
-    }
-
-    public String getEconomy() {
-        return Economy;
-    }*/
 
     public bookingClass getbookingClass() {
         return BookingClass;
@@ -395,7 +295,6 @@ public LocalDate getReturnDate(){
     }
     public String ticketNumber="11FASDFDOM";
         public void setTicketNumber() {
-        //String ticketNumber = null;
             switch (tripType) {
             case ONE_WAY:
             ticketNumber = "11";
@@ -419,128 +318,49 @@ public LocalDate getReturnDate(){
         }
 
 
-for (int i = 0; i < 4; i++) {
-
-
-    char f = (char) ((random.nextInt(26) + 65));
-
-
-    ticketNumber = ticketNumber + f;
-
-
-}
-
-
-this.ticketNumber = ticketNumber + "DOM";
-
-
-if (tripSource == tripSource.NANJING && tripDestination == tripDestination.BEIJING) {
-
-
+    for (int i = 0; i < 4; i++) {
+        char f = (char) ((random.nextInt(26) + 65));
+        ticketNumber = ticketNumber + f;
+    }
+    
     this.ticketNumber = ticketNumber + "DOM";
 
-
-}
-
-
-if (tripSource == tripSource.BEIJING && tripDestination == tripDestination.NANJING) {
-
-
-    this.ticketNumber = ticketNumber + "DOM";
-
-
-}
-
-
-if (tripSource == tripSource.OULU && tripDestination == tripDestination.HELSINKI) {
-
-
-    this.ticketNumber = ticketNumber + "DOM";
-
-
-}
-
-
-if (tripSource == tripSource.HELSINKI && tripDestination == tripDestination.OULU) {
-
-
-    this.ticketNumber = ticketNumber + "DOM";
-
-
-}
-
-
-if (tripSource == tripSource.NANJING && tripDestination == tripDestination.OULU) {
-
-
-    this.ticketNumber = ticketNumber + "INT";
-
-
-}
-
-
-
-if (tripSource == tripSource.OULU && tripDestination == tripDestination.NANJING) {
-
-
-    this.ticketNumber = ticketNumber + "INT";
-
-
-}
-
-
-if (tripSource == tripSource.NANJING && tripDestination == tripDestination.HELSINKI) {
-
-
-    this.ticketNumber = ticketNumber + "INT";
-
-
-}
-
-
-if (tripSource == tripSource.HELSINKI && tripDestination == tripDestination.NANJING) {
-
-
-    this.ticketNumber = ticketNumber + "INT";
-
-
-}
-
-
-if (tripSource == tripSource.BEIJING && tripDestination == tripDestination.OULU) {
-
-
-    this.ticketNumber = ticketNumber + "INT";
-
-
-}
-
-
-if (tripSource == tripSource.OULU && tripDestination == tripDestination.BEIJING) {
-
-
-    this.ticketNumber = ticketNumber + "INT";
-
-
-}
-
-
-if (tripSource == tripSource.BEIJING && tripDestination == tripDestination.NANJING) {
-
-
-    this.ticketNumber = ticketNumber + "INT";
-
-
-}
-
-
-if (tripSource == tripSource.HELSINKI && tripDestination == tripDestination.BEIJING) {
-
-
-    this.ticketNumber = ticketNumber + "INT";
-
-
-}
+    if (tripSource == TripSource.NANJING && tripDestination == TripDestination.BEIJING) {
+        this.ticketNumber = ticketNumber + "DOM";
+    }
+    if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) {
+        this.ticketNumber = ticketNumber + "DOM";
+    }
+    if (tripSource == TripSource.OULU && tripDestination == TripDestination.HELSINKI) {
+        this.ticketNumber = ticketNumber + "DOM";
+    }
+    if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.OULU) {
+        this.ticketNumber = ticketNumber + "DOM";
+    }
+    if (tripSource == TripSource.NANJING && tripDestination == TripDestination.OULU) {
+        this.ticketNumber = ticketNumber + "INT";
+    }
+    if (tripSource == TripSource.OULU && tripDestination == TripDestination.NANJING) {
+        this.ticketNumber = ticketNumber + "INT";
+    }
+    if (tripSource == TripSource.NANJING && tripDestination == TripDestination.HELSINKI) {
+        this.ticketNumber = ticketNumber + "INT";
+    }
+    if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.NANJING) {
+        this.ticketNumber = ticketNumber + "INT";
+    }
+    if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.OULU) {
+        this.ticketNumber = ticketNumber + "INT";
+    }
+    if (tripSource == TripSource.OULU && tripDestination == TripDestination.BEIJING) {
+        this.ticketNumber = ticketNumber + "INT";
+    }
+    if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) {
+        this.ticketNumber = ticketNumber + "INT";
+    }
+    if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.BEIJING) {
+        this.ticketNumber = ticketNumber + "INT";
+    }
 }
 }       
 
