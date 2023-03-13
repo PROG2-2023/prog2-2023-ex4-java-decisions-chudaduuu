@@ -479,6 +479,7 @@ if (tripSource == tripSource.NANJING && tripDestination == tripDestination.OULU)
 }
 
 
+
 if (tripSource == tripSource.OULU && tripDestination == tripDestination.NANJING) {
 
 
